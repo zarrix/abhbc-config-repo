@@ -43,6 +43,12 @@ spring:
             - Path=/infractions/**
           filters:
             - AuthorizationFilter
+        - id: microservice-oppositions-id
+          uri: http://localhost:8105/ #http://mutilisateurs-service:8101/
+          predicates:
+            - Path=/oppositions/**
+          filters:
+            - AuthorizationFilter
       default-filters:
         - AddResponseHeader=Routed, Yes
 
